@@ -20,6 +20,7 @@ public class RabbitMQController {
         String exchange = RabbitMQConfig.EXCHANGE_NAME;
         String routingKey = RabbitMQConfig.ROUTING_KEY;
         rabbitMQSender.sendMessage(exchange, routingKey, message);
+//        rabbitMQSender.sendMessage(exchange, routingKey, message);
         return "Message sent to RabbitMQ: " + message;
     }
 }

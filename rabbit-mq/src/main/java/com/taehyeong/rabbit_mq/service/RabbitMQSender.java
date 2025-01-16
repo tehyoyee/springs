@@ -14,6 +14,7 @@ public class RabbitMQSender {
 
     public void sendMessage(String exchange, String routingKey, String message) {
         rabbitTemplate.convertAndSend(exchange, routingKey, message);
+//        rabbitTemplate.convertAndSend(exchange, message);
         System.out.println(" [x] Sent '" + message + "'");
     }
 }

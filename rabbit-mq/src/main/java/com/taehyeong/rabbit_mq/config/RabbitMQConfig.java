@@ -11,7 +11,7 @@ public class RabbitMQConfig {
     public static final String QUEUE_NAME = "myQueue";
 
     // 교환기 이름
-    public static final String EXCHANGE_NAME = "myExchange";
+    public static final String EXCHANGE_NAME = "myFanoutExchange";
 
     // 라우팅 키
     public static final String ROUTING_KEY = "myRoutingKey";
@@ -23,14 +23,23 @@ public class RabbitMQConfig {
     }
 
     // 교환기 생성
+//    @Bean
+//    public DirectExchange myExchange() {
+//        return new DirectExchange(EXCHANGE_NAME);
+//    }
+
     @Bean
-    public DirectExchange myExchange() {
-        return new DirectExchange(EXCHANGE_NAME);
+    public FanoutExchange myExchange() {
+        return new FanoutExchange(EXCHANGE_NAME);
     }
 
     // 큐와 교환기 바인딩
+//    @Bean
+//    public Binding binding(Queue myQueue, DirectExchange myExchange) {
+//        return BindingBuilder.bind(myQueue).to(myExchange).with(ROUTING_KEY);
+//    }
     @Bean
-    public Binding binding(Queue myQueue, DirectExchange myExchange) {
-        return BindingBuilder.bind(myQueue).to(myExchange).with(ROUTING_KEY);
+    public Binding binding(Queue myQueue, FanoutExchange myExchange) {
+        return BindingBuilder.bind(myQueue).to(myExchange);
     }
 }

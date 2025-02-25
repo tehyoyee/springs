@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.taehyeong.design_patterns"},{"l":"com.taehyeong.design_patterns.controller"},{"l":"com.taehyeong.design_patterns.event"},{"l":"com.taehyeong.design_patterns.strategy"}];updateSearchResults();
